@@ -1,0 +1,208 @@
+# Grammars this repository compiles to WebAssembly (see build.py).
+#
+# `language` names the module file and the manifest entry; consumers map it to
+# their own language ids. `dir` is the grammar directory inside the crate
+# (holding `src/parser.c`) when it is not the crate root.
+
+# tree-sitter-cli that builds every module. The wasm ABI follows its version:
+# consumers must load the modules with a tree-sitter runtime of the same minor.
+tree_sitter = "0.25.10"
+
+[[grammar]]
+language = "astro"
+crate = "tree-sitter-astro-next"
+version = "0.1.1"
+
+[[grammar]]
+language = "clojure"
+crate = "tree-sitter-clojure"
+version = "0.1.0"
+dir = "grammar-src"
+
+[[grammar]]
+language = "cmake"
+crate = "tree-sitter-cmake"
+version = "0.7.5"
+
+[[grammar]]
+language = "csharp"
+crate = "tree-sitter-c-sharp"
+version = "0.23.5"
+
+[[grammar]]
+language = "dart"
+crate = "tree-sitter-dart"
+version = "0.2.0"
+
+[[grammar]]
+language = "dockerfile"
+crate = "tree-sitter-dockerfile-updated"
+version = "0.2.0"
+
+[[grammar]]
+language = "elixir"
+crate = "tree-sitter-elixir"
+version = "0.3.5"
+
+[[grammar]]
+language = "emacs-lisp"
+crate = "tree-sitter-elisp"
+version = "1.7.2"
+
+[[grammar]]
+language = "erlang"
+crate = "tree-sitter-erlang"
+version = "0.16.0"
+
+[[grammar]]
+language = "fortran"
+crate = "tree-sitter-fortran"
+version = "0.6.0"
+
+[[grammar]]
+language = "graphql"
+crate = "tree-sitter-graphql"
+version = "0.1.0"
+
+[[grammar]]
+language = "haskell"
+crate = "tree-sitter-haskell"
+version = "0.23.1"
+
+[[grammar]]
+language = "hcl"
+crate = "tree-sitter-hcl"
+version = "1.1.0"
+
+[[grammar]]
+language = "ini"
+crate = "tree-sitter-ini"
+version = "1.4.0"
+
+[[grammar]]
+language = "julia"
+crate = "tree-sitter-julia"
+version = "0.23.1"
+
+[[grammar]]
+language = "just"
+crate = "tree-sitter-just"
+version = "0.2.0"
+
+[[grammar]]
+language = "kotlin"
+crate = "tree-sitter-kotlin-sg"
+version = "0.4.1"
+
+[[grammar]]
+language = "lua"
+crate = "tree-sitter-lua"
+version = "0.5.0"
+
+[[grammar]]
+language = "make"
+crate = "tree-sitter-make"
+version = "1.1.1"
+
+[[grammar]]
+language = "nix"
+crate = "tree-sitter-nix"
+version = "0.3.0"
+
+[[grammar]]
+language = "objc"
+crate = "tree-sitter-objc"
+version = "3.0.2"
+
+[[grammar]]
+language = "ocaml"
+crate = "tree-sitter-ocaml"
+version = "0.24.2"
+dir = "grammars/ocaml"
+
+[[grammar]]
+language = "odin"
+crate = "tree-sitter-odin"
+version = "1.3.0"
+
+[[grammar]]
+language = "php"
+crate = "tree-sitter-php"
+version = "0.24.2"
+dir = "php_only"
+
+[[grammar]]
+language = "powershell"
+crate = "tree-sitter-powershell"
+version = "0.26.4"
+
+[[grammar]]
+language = "protobuf"
+crate = "tree-sitter-proto"
+version = "0.4.0"
+
+[[grammar]]
+language = "r"
+crate = "tree-sitter-r"
+version = "1.3.0"
+
+[[grammar]]
+language = "ruby"
+crate = "tree-sitter-ruby"
+version = "0.23.1"
+
+[[grammar]]
+language = "scala"
+crate = "tree-sitter-scala"
+version = "0.26.2"
+
+[[grammar]]
+language = "solidity"
+crate = "tree-sitter-solidity"
+version = "1.2.13"
+
+[[grammar]]
+language = "sql"
+crate = "tree-sitter-sequel"
+version = "0.3.11"
+
+[[grammar]]
+language = "starlark"
+crate = "tree-sitter-starlark"
+version = "1.3.0"
+
+[[grammar]]
+language = "svelte"
+crate = "tree-sitter-svelte-next"
+version = "0.1.1"
+
+[[grammar]]
+language = "swift"
+crate = "tree-sitter-swift"
+version = "0.7.3"
+
+[[grammar]]
+language = "tlaplus"
+crate = "tree-sitter-tlaplus"
+version = "1.5.0"
+
+[[grammar]]
+language = "verilog"
+crate = "tree-sitter-verilog"
+version = "1.0.3"
+
+[[grammar]]
+language = "vue"
+crate = "tree-sitter-vue-next"
+version = "0.1.0"
+
+[[grammar]]
+language = "xml"
+crate = "tree-sitter-xml"
+version = "0.7.0"
+dir = "xml"
+
+[[grammar]]
+language = "zig"
+crate = "tree-sitter-zig"
+version = "1.1.2"

@@ -1,0 +1,36 @@
+name: Build
+
+# Every push and pull request builds the grammars; pushing a `v*` tag also
+# publishes them as that tag's release: the `<language>-<sha>.wasm.zst`
+# modules, `manifest.json` (recording the tag), and THIRD-PARTY-NOTICES.txt.
+# Releases are immutable; cut a new tag for any change to grammars.toml.
+on:
+   pull_request:
+   push:
+      branches: [main]
+      tags: ["v*"]
+   workflow_dispatch:
+
+permissions:
+   contents: write
+
+jobs:
+   build:
+      runs-on: ubuntu-24.04
+      steps:
+         - uses: actions/checkout@v4
+         - uses: astral-sh/setup-uv@v6
+         - name: Build
+           run: uv run build.py --release "$RELEASE"
+           env:
+              RELEASE: ${{ github.ref_type == 'tag' && github.ref_name || 'dev' }}
+         - uses: actions/upload-artifact@v4
+           with:
+              name: wasm-grammars
+              path: dist/
+         - name: Publish release
+           if: github.ref_type == 'tag'
+           uses: softprops/action-gh-release@v2
+           with:
+              files: dist/*
+              fail_on_unmatched_files: true
